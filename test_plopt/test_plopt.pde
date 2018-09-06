@@ -8,7 +8,7 @@ data[i]=PVector.random2D( ).mult(random(300) );
 background(250);
 }
 int max=0;float t=0;float e;
-void draw(){t+=1;
+void draw(){t+=radians(1);
   if (max <301) { 
     max++;
   }
@@ -27,12 +27,22 @@ translate(width/2,height/2);fill( 250 );
     ellipse(0,0,10,10);
   }
   
+
   for ( int x = 0; x < max; x++) {
    // line( x, f(x), x-1, f(x-1) );
     point( x, f(x));
     ellipse(x,-circle(x),10,10);
 //ellipse((pow(exp(1),i* h) +pow(exp(1),-i* h) )/2,(pow(exp(1),i* h) -pow(exp(1),-i* h) )/(2*i),20,20);
-
+ 
+ 
+  
+ float  xx = 0 + (100)*cos(t)+-50*cos(-2*t)+30*cos(3*t)+22*cos(-mouseX*t);
+  float  yy = 0 +(-33)*sin(t)+50*sin(-2*t)+30*sin(3*t)+22*sin(-mouseX*t);
+  //ellipse(122*cos(t),122*sin(t),10,10);
+    ellipse(
+    xx,
+    yy,10,10);
+  
 println(  );
   }  
   
