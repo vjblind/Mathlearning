@@ -7,8 +7,8 @@ data[i]=PVector.random2D( ).mult(random(300) );
 
 background(250);
 }
-int max=0;
-void draw(){
+int max=0;float t=0;float e;
+void draw(){t+=1;
   if (max <301) { 
     max++;
   }
@@ -16,7 +16,10 @@ stroke(0);
 translate(width/2,height/2);fill( 250 );
   line(0, -200, 0, 200);
   line(-300, 0, 300, 0);
-  
+  //i=sqrt(-1)
+// eit=cos t  isin i t   ruler formula
+
+
   
   for ( int x = -300; x < max; x++) {
    // line( x, f(x), x-1, f(x-1) );
@@ -27,12 +30,19 @@ translate(width/2,height/2);fill( 250 );
   for ( int x = 0; x < max; x++) {
    // line( x, f(x), x-1, f(x-1) );
     point( x, f(x));
-    ellipse(x,0,10,10);
+    ellipse(x,-circle(x),10,10);
+//ellipse((pow(exp(1),i* h) +pow(exp(1),-i* h) )/2,(pow(exp(1),i* h) -pow(exp(1),-i* h) )/(2*i),20,20);
+
+println(  );
   }  
   
 } 
 
-
+float circle(float x) {
+  return( (pow(exp(1),0.1* x) +pow(exp(1),-0.1* x) )/2
+  +(pow(exp(1),0.1* x)-pow(exp(1),-0.1* x) )/2*0.1
+  );
+}
 float f(float x) {
   return( (x/30) * (x/30) * (x/30) );
 }
